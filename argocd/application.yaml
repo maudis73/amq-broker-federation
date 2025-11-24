@@ -1,3 +1,5 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
 metadata:
   name: amq-fed-1
   namespace: openshift-gitops
@@ -16,3 +18,6 @@ spec:
       selfHeal: true
     syncOptions:
     - CreateNamespace=true  # Argo will create the namespace for you!
+    managedNamespaceMetadata:
+      labels:
+        argocd.argoproj.io/managed-by: openshift-gitops
