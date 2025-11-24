@@ -25,7 +25,7 @@ data:
     # Monitor config file every X seconds for updates
     monitorInterval = 5
     
-    rootLogger.level = INFO
+    rootLogger.level = DEBUG
     rootLogger.appenderRef.console.ref = console
     
     logger.activemq.name=org.apache.activemq
