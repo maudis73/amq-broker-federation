@@ -42,6 +42,11 @@ spec:
   console:
     expose: true
   deploymentPlan:
+
+    extraMounts:
+      configMaps:
+      - "newlog4j-logging-config"
+
     clustered: false
 #    extraVolumeMounts:
 #      - mountPath: /opt/amq-broker/data
