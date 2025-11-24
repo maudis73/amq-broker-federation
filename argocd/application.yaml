@@ -4,7 +4,7 @@ metadata:
 spec:
   project: default
   source:
-    repoURL: 'https://github.com/YOUR-USERNAME/my-openshift-project.git'
+    repoURL: 'https://github.com/maudis73/amq-broker-federation.git'
     path: app               # Points to the 'app' folder
     targetRevision: HEAD
   destination:
