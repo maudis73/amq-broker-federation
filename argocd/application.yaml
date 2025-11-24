@@ -1,0 +1,18 @@
+metadata:
+  name: amq-fed-1
+  namespace: openshift-gitops
+spec:
+  project: default
+  source:
+    repoURL: 'https://github.com/YOUR-USERNAME/my-openshift-project.git'
+    path: app               # Points to the 'app' folder
+    targetRevision: HEAD
+  destination:
+    server: 'https://kubernetes.default.svc'
+    namespace: mau-amq-fed-1   # Where the app will run
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
+    syncOptions:
+    - CreateNamespace=true  # Argo will create the namespace for you!
