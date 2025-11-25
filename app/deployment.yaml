@@ -8,7 +8,16 @@ spec:
       name: ext-acceptor
       port: 61626
       protocols: AMQP,CORE
-#  brokerProperties:
+  brokerProperties:
+    - addressConfigurations.test-multicast.name=test-multicast
+    - addressConfigurations.test-multicast.routingTypes=MULTICAST
+
+    - addressConfigurations.test-anycast.name=test-anycast
+    - addressConfigurations.test-anycast.queueConfigurations.test-anycast.address=test-anycast
+    - addressConfigurations.test-anycast.queueConfigurations.test-anycast.name=test-anycast
+
+
+
 #    - HAPolicyConfiguration=SHARED_STORE_PRIMARY
 #    - journalDirectory=/opt/amq-broker/data/journal
 #    - 'pagingDirectory=/opt/amq-broker/data/paging,'
@@ -42,7 +51,13 @@ spec:
   console:
     expose: true
   deploymentPlan:
-
+    resources:
+      limits:
+        cpu: "500m"    # 500 millicores = 0.5 CPU
+        memory: "2Gi"  # Good practice: Always set a memory limit for Java!
+      requests:
+        cpu: "500m"    # Guaranteed CPU
+        memory: "2Gi"
     extraMounts:
       configMaps:
       - "newlog4j-logging-config"
@@ -55,6 +70,6 @@ spec:
 #      - name: extra-volume
 #        persistentVolumeClaim:
 #          claimName: shared-volume
-    persistenceEnabled: false
+    persistenceEnabled: true
     requireLogin: false
     size: 1
