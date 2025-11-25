@@ -2,8 +2,8 @@ apiVersion: broker.amq.io/v1beta1
 kind: ActiveMQArtemis
 metadata:
   name: broker-1
-annotations:
-  argocd.argoproj.io/sync-wave: "20"
+  annotations:
+    argocd.argoproj.io/sync-wave: "20"
 spec:
   acceptors:
     - expose: true

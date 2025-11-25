@@ -2,8 +2,8 @@ apiVersion: v1
 kind: ConfigMap
 metadata:
   name: newlog4j-logging-config
-annotations:
-  argocd.argoproj.io/sync-wave: "10"
+  annotations:
+    argocd.argoproj.io/sync-wave: "10"
 data:
   # 1. The Key becomes the filename: "log4j.properties"
   logging.properties: |
