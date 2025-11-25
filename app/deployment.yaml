@@ -12,11 +12,12 @@ spec:
     - addressConfigurations.test-multicast.name=test-multicast
     - addressConfigurations.test-multicast.routingTypes=MULTICAST
 
-    - addressConfigurations.test-anycast.name=test-anycast
-    - addressConfigurations.test-anycast.queueConfigurations.test-anycast.address=test-anycast
-    - addressConfigurations.test-anycast.queueConfigurations.test-anycast.name=test-anycast
-
-
+#    - addressConfigurations.test-anycast.name=test-anycast
+    - addressConfigurations.test-anycast.routingTypes=ANYCAST
+    - addressConfigurations.test-anycast.queueConfigurations.test-anycast.routingType=ANYCAST
+#    - addressConfigurations.test-anycast.queueConfigurations.test-anycast.address=test-anycast
+#    - addressConfigurations.test-anycast.queueConfigurations.test-anycast.name=test-anycast
+#    - addressConfigurations.test-anycast.routingTypes=ANYCAST
 
 #    - HAPolicyConfiguration=SHARED_STORE_PRIMARY
 #    - journalDirectory=/opt/amq-broker/data/journal
