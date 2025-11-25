@@ -17,7 +17,7 @@ spec:
     - addressConfigurations.test-anycast.routingTypes=ANYCAST
     - addressConfigurations.test-anycast.queueConfigurations.test-anycast.routingType=ANYCAST
 
-    - "amqpConnectionConfigurations.amqp-fed.uri=tcp://broker-1-ext-acceptor-0-svc.mau-amq-fed-broker-1.svc.cluster.local"
+    - "amqpConnectionConfigurations.amqp-fed.uri=tcp://broker-1-ext-acceptor-0-svc.mau-amq-fed-broker-1.svc.cluster.local:61626"
     - "amqpConnectionConfigurations.amqp-fed.receiverConfigurations.pull-anycast.queueName=test-anycast"
     - "amqpConnectionConfigurations.amqp-fed.receiverConfigurations.pull-anycast.addressName=test-anycast"
 
