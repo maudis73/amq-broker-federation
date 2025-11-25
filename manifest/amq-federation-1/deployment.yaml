@@ -1,7 +1,9 @@
 apiVersion: broker.amq.io/v1beta1
 kind: ActiveMQArtemis
 metadata:
-  name: fed-broker-a
+  name: broker-1
+annotations:
+  argocd.argoproj.io/sync-wave: "20"
 spec:
   acceptors:
     - expose: true
@@ -15,12 +17,9 @@ spec:
     - addressConfigurations.test-anycast.routingTypes=ANYCAST
     - addressConfigurations.test-anycast.queueConfigurations.test-anycast.routingType=ANYCAST
 
-    - "addressConfigurations.test-hybrid.routingTypes=ANYCAST,MULTICAST"
+#    - "addressConfigurations.test-hybrid.routingTypes=ANYCAST,MULTICAST"
 #    - "addressConfigurations.test-hybrid.queueConfigurations.test-anycast.routingType=ANYCAST"
 #    - "addressConfigurations.test-hybrid.queueConfigurations.test-multicast.routingType=MULTICAST"
-
-
-
 #    - HAPolicyConfiguration=SHARED_STORE_PRIMARY
 #    - journalDirectory=/opt/amq-broker/data/journal
 #    - 'pagingDirectory=/opt/amq-broker/data/paging,'
