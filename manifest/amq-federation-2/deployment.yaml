@@ -17,39 +17,10 @@ spec:
     - addressConfigurations.test-anycast.routingTypes=ANYCAST
     - addressConfigurations.test-anycast.queueConfigurations.test-anycast.routingType=ANYCAST
 
-#    - "addressConfigurations.test-hybrid.routingTypes=ANYCAST,MULTICAST"
-#    - "addressConfigurations.test-hybrid.queueConfigurations.test-anycast.routingType=ANYCAST"
-#    - "addressConfigurations.test-hybrid.queueConfigurations.test-multicast.routingType=MULTICAST"
-#    - HAPolicyConfiguration=SHARED_STORE_PRIMARY
-#    - journalDirectory=/opt/amq-broker/data/journal
-#    - 'pagingDirectory=/opt/amq-broker/data/paging,'
-#    - bindingsDirectory=/opt/amq-broker/data/bindings
-#    - largeMessagesDirectory=/opt/amq-broker/data/largemessages
-#    - addressConfigurations.test-multicast.name=test-multicast
-#    - addressConfigurations.test-multicast.routingTypes=MULTICAST
-#    - addressConfigurations.test-multicast-2.name=test-multicast-2
-#    - addressConfigurations.test-multicast-2.routingTypes=MULTICAST
-#    - addressConfigurations.test-anycast-2.name=test-anycast-2
-#    - addressConfigurations.test-anycast-2.queueConfigurations.test-anycast-2.address=test-anycast-2
-#    - addressConfigurations.test-anycast-2.queueConfigurations.test-anycast-2.name=test-anycast-2
-#    - addressConfigurations.test-anycast-2.queueConfigurations.test-anycast-2.routingType=ANYCAST
-#    - addressConfigurations.test-anycast-2.routingTypes=ANYCAST
-#    - addressConfigurations.test-anycast.name=test-anycast
-#    - addressConfigurations.test-anycast.queueConfigurations.test-anycast.address=test-anycast
-#    - addressConfigurations.test-anycast.queueConfigurations.test-anycast.consumersBeforeDispatch=0
-#    - addressConfigurations.test-anycast.queueConfigurations.test-anycast.delayBeforeDispatch=-1
-#    - addressConfigurations.test-anycast.queueConfigurations.test-anycast.durable=true
-#    - addressConfigurations.test-anycast.queueConfigurations.test-anycast.enabled=true
-#    - addressConfigurations.test-anycast.queueConfigurations.test-anycast.exclusive=false
-#    - addressConfigurations.test-anycast.queueConfigurations.test-anycast.groupBuckets=-1
-#    - addressConfigurations.test-anycast.queueConfigurations.test-anycast.groupRebalance=false
-#    - addressConfigurations.test-anycast.queueConfigurations.test-anycast.lastValue=false
-#    - addressConfigurations.test-anycast.queueConfigurations.test-anycast.maxConsumers=-1
-#    - addressConfigurations.test-anycast.queueConfigurations.test-anycast.name=test-anycast
-#    - addressConfigurations.test-anycast.queueConfigurations.test-anycast.nonDestructive=false
-#    - addressConfigurations.test-anycast.queueConfigurations.test-anycast.ringSize=-1
-#    - addressConfigurations.test-anycast.queueConfigurations.test-anycast.routingType=ANYCAST
-#    - addressConfigurations.test-anycast.routingTypes=ANYCAST
+    - "amqpConnectionConfigurations.amqp-fed.uri=tcp://broker-1-ext-acceptor-0-svc.mau-amq-fed-broker-1.svc.cluster.local"
+    - "amqpConnectionConfigurations.amqp-fed.receiverConfigurations.pull-anycast.queueName=test-anycast"
+    - "amqpConnectionConfigurations.amqp-fed.receiverConfigurations.pull-anycast.addressName=test-anycast"
+
   console:
     expose: true
   deploymentPlan:
