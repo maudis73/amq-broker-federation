@@ -58,6 +58,8 @@ spec:
       requests:
         cpu: "500m"    # Guaranteed CPU
         memory: "2Gi"
+    storage:
+      size: "2Gi"
     extraMounts:
       configMaps:
       - "newlog4j-logging-config"
