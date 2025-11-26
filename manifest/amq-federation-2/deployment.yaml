@@ -18,17 +18,8 @@ spec:
     - addressConfigurations.test-anycast.queueConfigurations.test-anycast.routingType=ANYCAST
 
     - AMQPConnections.queue-federation-example.uri=tcp://broker-1-ext-acceptor-0-svc.mau-amq-fed-broker-1.svc.cluster.local:61626
-#    - AMQPConnections.queue-federation-example.name=queue-federation-example
-#    - AMQPConnections.queue-federation-example.retryInterval=5000
-#    - AMQPConnections.queue-federation-example.transportConfigurations.queue-federation-example.factoryClassName=org.apache.activemq.artemis.core.remoting.impl.netty.NettyConnectorFactory
-#    - AMQPConnections.queue-federation-example.transportConfigurations.queue-federation-example.name=queue-federation-example
-#    - AMQPConnections.queue-federation-example.transportConfigurations.queue-federation-example.params.port=61626
-#    - AMQPConnections.queue-federation-example.transportConfigurations.queue-federation-example.params.host=broker-1-ext-acceptor-0-svc.mau-amq-fed-broker-1.svc.cluster.local
     - AMQPConnections.queue-federation-example.federations.queue-federation-example.type=FEDERATION
     - AMQPConnections.queue-federation-example.federations.queue-federation-example.localAddressPolicies.example-local-address-policy.includes."thy.#".addressMatch=thy.#
-#    - AMQPConnections.queue-federation-example.federations.queue-federation-example.localAddressPolicies.example-local-address-policy.includes."queue.news.#".name=queue.news.#
-
-
 
   console:
     expose: true
