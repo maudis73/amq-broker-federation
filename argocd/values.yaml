@@ -1,0 +1,5 @@
+global:
+  broker1_ns: mau-amq-fed-1
+  broker2_ns: mau-amq-fed-2
+  repoURL: 'https://github.com/maudis73/amq-broker-federation.git'
+  targetRevision: HEAD

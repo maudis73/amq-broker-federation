@@ -1,0 +1,4 @@
+apiVersion: v2
+name: amq-federation-2
+version: 1.0.0
+description: Downstream Broker with Federation

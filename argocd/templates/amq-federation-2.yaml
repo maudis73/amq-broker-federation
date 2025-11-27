@@ -1,19 +1,24 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: amq-federation-1
+  name: amq-federation-2
   namespace: openshift-gitops
   finalizers:
     - resources-finalizer.argocd.argoproj.io 
 spec:
   project: default
   source:
-    repoURL: 'https://github.com/maudis73/amq-broker-federation.git'
-    path: manifest/amq-federation-1              # Points to the 'app' folder
-    targetRevision: HEAD
+    repoURL: {{ .Values.repoURL }}
+    targetRevision: {{ .Values.targetRevision }}
+    path: manifest/amq-federation-2
+    helm:
+      parameters:
+        # The upstream namespace (Broker 1) for the URL
+        - name: upstreamNamespace
+          value: {{ .Values.global.broker1_ns }}
   destination:
     server: 'https://kubernetes.default.svc'
-    namespace: mau-amq-fed-broker-1   # Where the app will run
+    namespace: {{ .Values.global.broker2_ns }}
   syncPolicy:
     automated:
       prune: true
