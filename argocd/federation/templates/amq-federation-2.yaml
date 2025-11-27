@@ -15,10 +15,10 @@ spec:
       parameters:
         # The upstream namespace (Broker 1) for the URL
         - name: upstreamNamespace
-          value: {{ .Values.global.broker1_ns }}
+          value: {{ .Values.broker1_ns }}
   destination:
     server: 'https://kubernetes.default.svc'
-    namespace: {{ .Values.global.broker2_ns }}
+    namespace: {{ .Values.broker2_ns }}
   syncPolicy:
     automated:
       prune: true
