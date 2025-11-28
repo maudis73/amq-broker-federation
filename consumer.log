@@ -1,0 +1,10 @@
+Executing org.apache.activemq.artemis.cli.commands.messages.Consumer consumer --url tcp://localhost:61616 --destination orders.queue --message-count 2000 --verbose --break-on-null --user admin --password hapassword 
+Home::/opt/amq, Instance::/home/jboss/amq-broker
+Connection brokerURL = tcp://localhost:61616
+Consumer:: filter = null
+Consumer ActiveMQQueue[orders.queue], thread=0 wait 3000ms until 2000 messages are consumed
+Consumer ActiveMQQueue[orders.queue], thread=0 Consumed: 2000 messages
+Consumer ActiveMQQueue[orders.queue], thread=0 Elapsed time in second : 3 s
+Consumer ActiveMQQueue[orders.queue], thread=0 Elapsed time in milli second : 3016 milli seconds
+Consumer ActiveMQQueue[orders.queue], thread=0 Consumed: 0 messages
+Consumer ActiveMQQueue[orders.queue], thread=0 Consumer thread finished
