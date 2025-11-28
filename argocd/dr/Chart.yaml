@@ -1,0 +1,4 @@
+apiVersion: v2
+name: argocd-logic
+version: 1.0.0
+description: ArgoCD Application Logic

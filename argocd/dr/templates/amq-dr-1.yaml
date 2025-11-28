@@ -1,7 +1,7 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: amq-federation-2
+  name: amq-dr-1
   namespace: openshift-gitops
   finalizers:
     - resources-finalizer.argocd.argoproj.io 
@@ -9,16 +9,16 @@ spec:
   project: default
   source:
     repoURL: {{ .Values.repoURL }}
+    path: manifest/dr/amq-dr-1
     targetRevision: {{ .Values.targetRevision }}
-    path: manifest/federation/amq-federation-2
     helm:
       parameters:
-        # The upstream namespace (Broker 1) for the URL
-        - name: upstreamNamespace
-          value: {{ .Values.broker1_ns }}
+        # The other namespace (Broker 2) for the URL
+        - name: otherNamespace
+          value: {{ .Values.broker2_ns }}
   destination:
     server: 'https://kubernetes.default.svc'
-    namespace: {{ .Values.broker2_ns }}
+    namespace: {{ .Values.broker1_ns }}    
   syncPolicy:
     automated:
       prune: true

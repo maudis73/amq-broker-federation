@@ -9,7 +9,7 @@ spec:
   project: default
   source:
     repoURL: {{ .Values.repoURL }}
-    path: manifest/amq-federation-1
+    path: manifest/federation/amq-federation-1
     targetRevision: {{ .Values.targetRevision }}
   destination:
     server: 'https://kubernetes.default.svc'

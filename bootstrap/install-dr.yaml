@@ -1,7 +1,7 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: amq-federation   # The Project Name
+  name: amq-dr   # The Project Name
   namespace: openshift-gitops
   finalizers:
     - resources-finalizer.argocd.argoproj.io
@@ -10,7 +10,7 @@ spec:
   source:
     repoURL: &repo_url 'https://github.com/maudis73/amq-broker-federation.git'
     targetRevision: &target_revision 'HEAD'
-    path: argocd/federation
+    path: argocd/dr
     helm:
       parameters:
         - name: repoURL
@@ -18,9 +18,9 @@ spec:
         - name: targetRevision
           value: *target_revision
         - name: broker1_ns
-          value: "my-fed-producer"
+          value: "mau-amq-dr-1"
         - name: broker2_ns
-          value: "my-fed-consumer"
+          value: "mau-amq-dr-2"
   destination:
     server: 'https://kubernetes.default.svc'
     namespace: openshift-gitops  # The Parent lives in the control plane
