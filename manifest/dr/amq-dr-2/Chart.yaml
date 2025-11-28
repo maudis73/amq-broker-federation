@@ -1,0 +1,4 @@
+apiVersion: v2
+name: amq-federation-1
+version: 1.0.0
+description: Upstream Broker
