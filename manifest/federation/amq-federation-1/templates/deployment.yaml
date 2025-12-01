@@ -65,7 +65,7 @@ spec:
     extraMounts:
       configMaps:
       - "newlog4j-logging-config"
-
+    enableMetricsPlugin: true
     clustered: false
 #    extraVolumeMounts:
 #      - mountPath: /opt/amq-broker/data

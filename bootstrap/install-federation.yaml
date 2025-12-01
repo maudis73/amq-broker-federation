@@ -18,9 +18,9 @@ spec:
         - name: targetRevision
           value: *target_revision
         - name: broker1_ns
-          value: "my-fed-producer"
+          value: "mau-amq-fed-1"
         - name: broker2_ns
-          value: "my-fed-consumer"
+          value: "mau-amq-fed-2"
   destination:
     server: 'https://kubernetes.default.svc'
     namespace: openshift-gitops  # The Parent lives in the control plane
