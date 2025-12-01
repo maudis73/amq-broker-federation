@@ -10,7 +10,7 @@ spec:
   selector:
     matchLabels:
       # This MUST match the label on the SERVICE, not just the Pod.
-      ActiveMQArtemis: broker-2 
+      ActiveMQArtemis: broker-2
   
   # 2. ENDPOINTS: This tells Prometheus which port on that Service to scrape
   endpoints:
