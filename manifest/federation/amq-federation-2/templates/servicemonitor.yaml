@@ -18,3 +18,8 @@ spec:
     interval: 30s
     path: /metrics
     scheme: http
+
+  relabelings:
+      # Label 1: Define the Role
+      - targetLabel: Application
+        replacement: "federation"
