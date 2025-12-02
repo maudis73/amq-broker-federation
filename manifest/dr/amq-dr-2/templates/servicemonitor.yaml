@@ -15,7 +15,7 @@ spec:
   # 2. ENDPOINTS: This tells Prometheus which port on that Service to scrape
   endpoints:
   - port: wconsj-0   # The standard name for the Console/Metrics port
-    interval: 30s
+    interval: 5s
     path: /metrics
     scheme: http
 
