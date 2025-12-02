@@ -1,0 +1,25 @@
+apiVersion: monitoring.coreos.com/v1
+kind: ServiceMonitor
+metadata:
+  name: broker-2-monitor
+  # No namespace needed (Argo injects it)
+  labels:
+    k8s-app: amq-broker
+spec:
+  # 1. SELECTOR: This finds the Kubernetes Service
+  selector:
+    matchLabels:
+      # This MUST match the label on the SERVICE, not just the Pod.
+      ActiveMQArtemis: broker-2
+  
+  # 2. ENDPOINTS: This tells Prometheus which port on that Service to scrape
+  endpoints:
+  - port: wconsj-0   # The standard name for the Console/Metrics port
+    interval: 30s
+    path: /metrics
+    scheme: http
+
+    relabelings:
+      # Label 1: Define the Role
+      - targetLabel: Application
+        replacement: "dr"
