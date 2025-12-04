@@ -19,7 +19,7 @@ spec:
 
     - AMQPConnections.datacenter1.uri=tcp://broker-1-ext-acceptor-0-svc.{{ .Values.otherNamespace }}.svc.cluster.local:61626
     - AMQPConnections.datacenter1.connectionElements.mirror.type=MIRROR
-    - AMQPConnections.datacenter1.connectionElements.mirror.sync=true
+    - AMQPConnections.datacenter1.connectionElements.mirror.sync=false
 
   console:
     expose: true
