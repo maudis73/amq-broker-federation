@@ -22,6 +22,11 @@ spec:
     - AMQPConnections.queue-federation-example.federations.queue-federation-example.type=FEDERATION
     - AMQPConnections.queue-federation-example.federations.queue-federation-example.localAddressPolicies.example-local-address-policy.includes."thy.#".addressMatch=thy.#
 
+
+    - AMQPConnections.upstream-connection.federations.my-queue-fed.type=FEDERATION
+    - AMQPConnections.upstream-connection.federations.my-queue-fed.localQueuePolicies.anycast-policy.name=anycast-policy
+    - AMQPConnections.upstream-connection.federations.my-queue-fed.localQueuePolicies.anycast-policy.includes.test-anycast.queueMatch=test-anycast
+
   console:
     expose: true
   deploymentPlan:
